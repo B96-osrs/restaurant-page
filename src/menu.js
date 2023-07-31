@@ -9,16 +9,12 @@ function createMenuContainer(mainDiv) {
     return container;
 }
 
-
-function printMenu(parent) {
-    let menuItemOne = document.createElement("div");
-    menuItemOne.classList.add("menu-item");
-    parent.appendChild(menuItemOne);
-}
-
 function createMenuItem(name, ingredientList, price, imageSource) {
     let card = document.createElement("div");
     card.classList.add("card");
+
+    let itemImage = document.createElement("img");
+    itemImage.src = imageSource;
 
     let itemName = document.createElement("div");
     itemName.setAttribute("id","card-name");

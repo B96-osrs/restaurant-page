@@ -5,11 +5,9 @@ module.exports = {
     output: {
         filename: "main.js",
         path: path.resolve(__dirname,"dist"),
-        clean:true,
     },
     stats: {
         errorDetails: true,
-        children: true
     },
     module: {
         rules: [
