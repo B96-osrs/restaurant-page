@@ -1,23 +1,38 @@
-import {createContainer, navigationBar, printHeadline, printAbout, printHomeImage} from "./home.js";
+import {createHomeContainer, navigationBar,} from "./home.js";
+import {createMenuContainer} from "./menu.js";
 import "./style.css";
 
-console.log("Setup was successfull!");
 const mainContent = document.querySelector(".content");
 console.log(mainContent);
 const navBar = navigationBar(mainContent);
 navBar.printNav();
+createHomeContainer(mainContent);
+
+function clearPage() {
+    while(mainContent.childNodes.length > 1) {
+        mainContent.removeChild(mainContent.lastChild); //clear previous content
+    }
+}
 
 navBar.homeButton.addEventListener("click", function(event) {
-    const homeContainer = createContainer(mainContent);
-    printHeadline(homeContainer);
-    printHomeImage(homeContainer);
-    printAbout(homeContainer);
+    clearPage();
+    createHomeContainer(mainContent);
 
 });
 
 navBar.menuButton.addEventListener("click", function(event) {
+    clearPage();
+    createMenuContainer(mainContent);
 
 });
+navBar.contactButton.addEventListener("click", function(event) {
+    clearPage();
+    createMenuContainer(mainContent);
+
+});
+
+
+
 
 
 

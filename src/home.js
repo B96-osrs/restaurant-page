@@ -1,9 +1,12 @@
-
-function createContainer(mainDiv) {
+function createHomeContainer(mainDiv) {
     let container = document.createElement("div");
     container.classList.add("home-container")
     mainDiv.appendChild(container);
-    console.log("createcontainer was executed");
+    console.log("homecontainer created");
+
+    printHeadline(container);
+    printHomeImage(container);
+    printAbout(container);
     return container;
 }
 
@@ -21,14 +24,14 @@ function navigationBar(parent) {
         menuButton.setAttribute("id","menu-button");
         menuButton.textContent = "Menu";
         contactButton.setAttribute("id","contact-button");
-        
+
         contactButton.textContent = "Contact";
         parent.appendChild(navBar);
         navBar.appendChild(homeButton);
         navBar.appendChild(menuButton);
         navBar.appendChild(contactButton);
     }
-    return {homeButton, menuButton, contactButton,printNav};
+    return {homeButton, menuButton, contactButton, printNav};
 }
 
 function printHeadline(parent) {
@@ -49,16 +52,13 @@ function printHomeImage(parent) {
 function printAbout(parent) {
     let aboutText = document.createElement("div");
     aboutText.setAttribute("id","about-text");
-    aboutText.textContent = "In der L’Osteria geht die Türe auf und schon fühlt man sich wie in einer typisch italienischen Osteria: Hier kommen Menschen – Familien, Freunde, Pärchen, Jung und Alt – zusammen, um gut zu essen." +  
-    "Es ist ein bisschen laut, lebhaft und über allem schwebt der köstliche Duft der echten italienischen Küche. Ein offener, herzlicher Ort, an dem man so sein darf, wie man ist und sich wie zu Hause fühlt."
+    aboutText.textContent = "In the L'Osteria, the door opens and you immediately feel like you're in a typical Italian osteria: People - families, friends, couples, young and old - come together to eat well." +  
+    "It's a bit loud, lively, and the delicious scent of authentic Italian cuisine fills the air. It's an open, welcoming place where you can be yourself and feel at home."
     parent.appendChild(aboutText);
 }
 
 
 export {
-    createContainer,
+    createHomeContainer,
     navigationBar,
-    printHeadline,
-    printAbout,
-    printHomeImage
 };
