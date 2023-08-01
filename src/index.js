@@ -29,7 +29,6 @@ navBar.menuButton.addEventListener("click", function(event) {
 
 });
 navBar.contactButton.addEventListener("click", function(event) {
-    console.log("contact menu created");
     clearPage();
     createContactContainer(mainContent);
 
