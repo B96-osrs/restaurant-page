@@ -1,11 +1,15 @@
-import {createHomeContainer, navigationBar,} from "./home.js";
+import {createHomeContainer} from "./home.js";
 import {createMenuContainer} from "./menu.js";
+import {createContactContainer} from "./contact.js";
+import {navigationBar} from "./navigation.js";
 import "./style.css";
+
 
 const mainContent = document.querySelector(".content");
 console.log(mainContent);
 const navBar = navigationBar(mainContent);
 navBar.printNav();
+createHomeContainer(mainContent);
 
 function clearPage() {
     mainContent.removeChild(mainContent.lastChild); //clear previous content
@@ -25,7 +29,9 @@ navBar.menuButton.addEventListener("click", function(event) {
 
 });
 navBar.contactButton.addEventListener("click", function(event) {
+    console.log("contact menu created");
     clearPage();
+    createContactContainer(mainContent);
 
 });
 
